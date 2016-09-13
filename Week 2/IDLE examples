@@ -1,0 +1,47 @@
+numberOfPizzas = 1
+yearsOld = 29
+print('In my lifetime, I have eaten ', numberOfPizzas * 52 * yearsOld, ' pizzas')
+
+numbersOfLifetimePizzas = numberOfPizzas * 52 * yearsOld
+print(numbersOfLifetimePizzas)
+
+print('In my lifetime, I have eaten ', numbersOfLifetimePizzas, ' pizzas')
+
+numbersOfLifetimePizzas =  numbersOfLifetimePizzas / 2
+print('In my lifetime, I have eaten ', numbersOfLifetimePizzas, ' pizzas')
+
+numbersOfLifetimePizzas =  numbersOfLifetimePizzas * 2
+print(numbersOfLifetimePizzas)
+
+numbersOfLifetimePizzas =  numbersOfLifetimePizzas / 3
+print(numbersOfLifetimePizzas)
+
+numbersOfLifetimePizzas =  numbersOfLifetimePizzas * 3 // 3
+print(numbersOfLifetimePizzas)
+
+newNumberofLifetimePizzas = numbersOfLifetimePizzas * 3 // 3
+print(newNumberofLifetimePizzas)
+
+print(numbersOfLifetimePizzas % 10 )
+
+bryantsDailySteps = 2500
+robtersDailySteps = 3000
+susansDailySteps = 4000
+fatemsDailySteps = 3500
+ericsDailySteps = 12000
+classTotalSteps = bryantsDailySteps + robtersDailySteps + susansDailySteps + fatemsDailySteps + 
+classTotalSteps = bryantsDailySteps + robtersDailySteps + susansDailySteps + fatemsDailySteps + ericsDailySteps
+print(classTotalSteps)
+classAverageSteps = classTotalSteps // 5
+print(classAverageSteps)
+robtersDailySteps = 6000
+classTotalSteps = bryantsDailySteps + robtersDailySteps + susansDailySteps + fatemsDailySteps + ericsDailySteps
+classAverageSteps = classTotalSteps // 5
+print(classAverageSteps)
+numberOfSteps1 = int(input('Enter the number of steps you took today') )
+print(numberOfSteps1)
+numberOfSteps2 = int(input('Enter the number of steps you took today: ') )
+numberOfSteps1 = numberOfSteps1 + int(input('Enter the number of steps you took today: ') )
+print(numberOfSteps1)
+print(robtersDailySteps)
+numbersOfSteps = 10

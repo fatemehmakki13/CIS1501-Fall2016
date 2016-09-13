@@ -1,0 +1,6 @@
+totalSteps = int(input('Enter the number of steps you took today: ') )
+totalSteps = totalSteps + int(input('Enter the number of steps you took today: ') )
+totalSteps = totalSteps + int(input('Enter the number of steps you took today: ') )
+totalSteps = totalSteps + int(input('Enter the number of steps you took today: ') )
+totalSteps = totalSteps + int(input('Enter the number of steps you took today: ') )
+print( totalSteps // 5 )
