@@ -1,0 +1,165 @@
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:01:18) [MSC v.1900 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> print( 5 % 2 )
+1
+>>> print 5 + 5
+SyntaxError: Missing parentheses in call to 'print'
+>>> name = 'Eric'
+>>> name = 'Eric Charnesky'
+>>> name = name + ",MS Sc."
+>>> print(name)
+Eric Charnesky,MS Sc.
+>>> className = 'CIS 1501'
+>>> print( name, className )
+Eric Charnesky,MS Sc. CIS 1501
+>>> print(name+className)
+Eric Charnesky,MS Sc.CIS 1501
+>>> number = '5'
+>>> print( number + 5 )
+Traceback (most recent call last):
+  File "<pyshell#10>", line 1, in <module>
+    print( number + 5 )
+TypeError: Can't convert 'int' object to str implicitly
+>>> name = input('Please enter your name:')
+Please enter your name:Bryant
+>>> car = input('Please enter the kind of car you have:')
+Please enter the kind of car you have:Fusion
+>>> print( name, 'drives a', car)
+Bryant drives a Fusion
+>>> print( name + ' drives a ' + car)
+Bryant drives a Fusion
+>>> peopleHere = ['Eric','Bryant','Susan','Matt','Fatemeh','Robert']
+>>> print(peopleHere)
+['Eric', 'Bryant', 'Susan', 'Matt', 'Fatemeh', 'Robert']
+>>> print(peopleHere[0])
+Eric
+>>> print(peopleHere[2])
+Susan
+>>> print(peopleHere[5])
+Robert
+>>> print(peopleHere[6])
+Traceback (most recent call last):
+  File "<pyshell#20>", line 1, in <module>
+    print(peopleHere[6])
+IndexError: list index out of range
+>>> print(peopleHere[-1])
+Robert
+>>> print(len(peopleHere))
+6
+>>> peopleHere.append('Jacob')
+>>> print(peopleHere)
+['Eric', 'Bryant', 'Susan', 'Matt', 'Fatemeh', 'Robert', 'Jacob']
+>>> peopleHere.remove('Jacob')
+>>> print(peopleHere)
+['Eric', 'Bryant', 'Susan', 'Matt', 'Fatemeh', 'Robert']
+>>> peopleHere.pop(1)
+'Bryant'
+>>> print(peopleHere)
+['Eric', 'Susan', 'Matt', 'Fatemeh', 'Robert']
+>>> print(peopleHere.sum())
+Traceback (most recent call last):
+  File "<pyshell#29>", line 1, in <module>
+    print(peopleHere.sum())
+AttributeError: 'list' object has no attribute 'sum'
+>>> print(sum(peopleHere))
+Traceback (most recent call last):
+  File "<pyshell#30>", line 1, in <module>
+    print(sum(peopleHere))
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> favoriteNumbers = []
+>>> print(favoriteNumbers)
+[]
+>>> favoriteNumbers.add(42)
+Traceback (most recent call last):
+  File "<pyshell#33>", line 1, in <module>
+    favoriteNumbers.add(42)
+AttributeError: 'list' object has no attribute 'add'
+>>> favoriteNumbers.append(42)
+>>> favoriteNumbers.append(5)
+>>> favoriteNumbers.append(13)
+>>> favoriteNumbers.append(8)
+>>> favoriteNumbers.append(7)
+>>> favoriteNumbers.append(7)
+>>> print(favoriteNumbers)
+[42, 5, 13, 8, 7, 7]
+>>> print(sum(favoriteNumbers))
+82
+>>> print(min(favoriteNumbers))
+5
+>>> print(max(favoriteNumbers))
+42
+>>> print(list.index('Susan'))
+Traceback (most recent call last):
+  File "<pyshell#44>", line 1, in <module>
+    print(list.index('Susan'))
+TypeError: descriptor 'index' requires a 'list' object but received a 'str'
+>>> print(peopleHere.index('Susan'))
+1
+>>> print(peopleHere)
+['Eric', 'Susan', 'Matt', 'Fatemeh', 'Robert']
+>>> peopleHere.append('Susan')
+>>> print(peopleHere.count('Susan'))
+2
+>>> peopleHere[0] = 'Eric Charnesky'
+>>> print(peopleHere)
+['Eric Charnesky', 'Susan', 'Matt', 'Fatemeh', 'Robert', 'Susan']
+>>> pets = ( 'Zoe', 'Kya', 'Ian' )
+>>> print(pets)
+('Zoe', 'Kya', 'Ian')
+>>> print(pets[0])
+Zoe
+>>> pets[0] = 'Zoey'
+Traceback (most recent call last):
+  File "<pyshell#54>", line 1, in <module>
+    pets[0] = 'Zoey'
+TypeError: 'tuple' object does not support item assignment
+>>> favoriteColors = { 'Eric' : 'Blue' , 'Susan' : 'Blue', 'Robert' : 'Blue', 'Matt' : 'Purple' }
+>>> print(favoriteColors)
+{'Matt': 'Purple', 'Susan': 'Blue', 'Robert': 'Blue', 'Eric': 'Blue'}
+>>> print( favoriteColors[0] )
+Traceback (most recent call last):
+  File "<pyshell#57>", line 1, in <module>
+    print( favoriteColors[0] )
+KeyError: 0
+>>> print( favoriteColors['Matt'] )
+Purple
+>>> favoriteColors['Eric'] = 'Dark Blue'
+>>> print(favoriteColors)
+{'Matt': 'Purple', 'Susan': 'Blue', 'Robert': 'Blue', 'Eric': 'Dark Blue'}
+>>> print( favoriteColors['Bryant'])
+Traceback (most recent call last):
+  File "<pyshell#61>", line 1, in <module>
+    print( favoriteColors['Bryant'])
+KeyError: 'Bryant'
+>>> favoriteColors['Bryant'] = 'Light Blue'
+>>> favoriteColors['Susan'] = 'Yellow'
+>>> print(favoriteColors)
+{'Matt': 'Purple', 'Susan': 'Yellow', 'Robert': 'Blue', 'Eric': 'Dark Blue', 'Bryant': 'Light Blue'}
+>>> del favoriteColors['Robert']
+>>> print (favoriteColors)
+{'Matt': 'Purple', 'Susan': 'Yellow', 'Eric': 'Dark Blue', 'Bryant': 'Light Blue'}
+>>> someNumber = 10
+>>> print( someNumber )
+10
+>>> print( "eric" + someNumber )
+Traceback (most recent call last):
+  File "<pyshell#69>", line 1, in <module>
+    print( "eric" + someNumber )
+TypeError: Can't convert 'int' object to str implicitly
+>>> print( "eric" + str(someNumber) )
+eric10
+>>> print( int('10') + float(str(10)) )
+20.0
+>>> total = 75
+>>> print( 'You know', total, 'people')
+You know 75 people
+>>> print( 'You know %d people' % total )
+You know 75 people
+>>> import math
+>>> print( math.pow(2,2))
+4.0
+>>> print( math.sqrt( math.pow(2, 2 ) ) )
+2.0
+>>> print( 'You know ' + str(total) + ' people' )
+You know 75 people
+>>> 
