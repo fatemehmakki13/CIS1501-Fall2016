@@ -1,0 +1,13 @@
+favoriteAnimals = []
+favoriteAnimals.append( input('What is your favorite animal? ') )
+favoriteAnimals.append( input('What is your favorite animal? ') )
+favoriteAnimals.append( input('What is your favorite animal? ') )
+favoriteAnimals.append( input('What is your favorite animal? ') )
+favoriteAnimals.append( input('What is your favorite animal? ') )
+favoriteAnimals.append( input('What is your favorite animal? ') )
+print ( favoriteAnimals[0], 'is the favoriate animal of', favoriteAnimals.count( favoriteAnimals[0] ), 'people' )
+print ( favoriteAnimals[1], 'is the favoriate animal of', favoriteAnimals.count( favoriteAnimals[1] ), 'people' )
+print ( favoriteAnimals[2], 'is the favoriate animal of', favoriteAnimals.count( favoriteAnimals[2] ), 'people' )
+print ( favoriteAnimals[3], 'is the favoriate animal of', favoriteAnimals.count( favoriteAnimals[3] ), 'people' )
+print ( favoriteAnimals[4], 'is the favoriate animal of', favoriteAnimals.count( favoriteAnimals[4] ), 'people' )
+print ( favoriteAnimals[5], 'is the favoriate animal of', favoriteAnimals.count( favoriteAnimals[5] ), 'people' )
