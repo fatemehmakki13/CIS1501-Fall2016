@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7e0ab4a4-2cf7-47e4-a6d6-6969a5dda40d</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Functions.py</StartupFile>
+    <StartupFile>TempConverter.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Functions.py" />
+    <Compile Include="TempConverter.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
