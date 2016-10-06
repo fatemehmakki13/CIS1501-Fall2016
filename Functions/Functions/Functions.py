@@ -1,5 +1,5 @@
 
-def print_tic_tac_toe(horizontal_character, vertical_character):
+def print_tic_tac_toe(horizontal_character = '~', vertical_character = '!'):
    print_tic_tac_toe_row_with_vertical_character(vertical_character)
    print_tic_tac_toe_horizontal_line(horizontal_character)
    print_tic_tac_toe_row_with_vertical_character(vertical_character)
@@ -17,4 +17,8 @@ def print_tic_tac_toe_horizontal_line(horizontal_character):
     print()
     return
 
-print_tic_tac_toe("~","&")
+print_tic_tac_toe()
+
+print_tic_tac_toe('@')
+
+print_tic_tac_toe('%',')')
