@@ -28,6 +28,7 @@ def has_bingo(board):
         if colHasBingo:
             return True
 
+    #check diagonal top  left to bottom right
     topLeftToBottomRightHasBingo = True
     for index in range(len(board)):
         # make a new list of the values in the dictionary and get the first item ( index 0 )
