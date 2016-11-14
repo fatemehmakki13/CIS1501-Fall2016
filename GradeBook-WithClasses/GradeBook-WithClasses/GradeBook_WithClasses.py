@@ -2,12 +2,16 @@ class GradeBook:
     def __init__( self, className, students ):
         self.className = className
         self._students = {}
+        self.categoriesAndMaxScore = {}
         for student in students:
             self._students[student] = {}
 
-    def AddCategory( self, category ):
+    def AddCategory( self, category, maxScore ):
+        if self.GetSumOfCategoriesMaxScore() + maxScore > 100:
+            raise ValueError('Sum of max scores is above 100. Current sum is: ' + str(self.GetSumOfCategoriesMaxScore()) )
         for scores in self._students.values():
             scores[category] = 0
+            self.categoriesAndMaxScore[category] = maxScore
 
     def GetAverageGrade( self ):
         totalScore = 0
@@ -17,11 +21,11 @@ class GradeBook:
         return averageScore
 
     def GetCategories( self ):
-        for categories in self._students.values():
-            categoryList = list(categories.keys())
-            categoryList.sort()
-            return categoryList
+        return self.categoriesAndMaxScore.items()
     
+    def GetSumOfCategoriesMaxScore( self ):
+        return sum(self.categoriesAndMaxScore.values() )
+
     def GetScoreForCategoryForStudent( self, student, category ):
         '''Returns student's score for category or -1 if not found'''
         return self._students.get(student, {} ).get(category, -1)
@@ -63,6 +67,10 @@ class GradeBook:
     def UpdateScore( self, student, category, score ):
         if student in self._students:
             if category in self._students[student]:
+                if score < 0:
+                    raise ValueError('Score can not be less than 0')
+                if score > self.categoriesAndMaxScore[category]:
+                    raise ValueError('Score can not be more than than '+ str(self.categoriesAndMaxScore[category]))
                 self._students[student][category] = score
 
     def __str__( self ):
@@ -84,7 +92,7 @@ def PrintMenu():
     return input("Enter a choice: ")
 
 gradeBooks = []
-className = input("Enter a class name or DONE to stop entering classes")
+className = input("Enter a class name or DONE to stop entering classes: ")
 while className != 'DONE': 
     students = []
     name = input("Enter a student name or DONE to stop entering names: ")
@@ -95,17 +103,31 @@ while className != 'DONE':
     classGradeBook = GradeBook( className, students )
     gradeBooks.append(classGradeBook)
 
-    category = input("Enter a grade category or DONE to stop entering categories: ")
-    while category != 'DONE':
-        classGradeBook.AddCategory(category)
-        category = input("Enter a grade category or DONE to stop entering categories: ")
+    
+    while classGradeBook.GetSumOfCategoriesMaxScore() != 100:
+        category = input("Enter a grade category: ")
+        maxScore = -1
+        while maxScore < 0 or maxScore + classGradeBook.GetSumOfCategoriesMaxScore() > 100:
+            try:
+                value = input("Enter the max score for " + category + ": ")
+                maxScore = int(value)
+                classGradeBook.AddCategory(category, maxScore)
+                break
+            except ValueError as exception:
+                print(exception)
 
     for student in classGradeBook.GetStudents():
-        for category in classGradeBook.GetCategories():
-            score = float(input("Please enter the score for " + student + "'s " + category + ": "))
-            classGradeBook.UpdateScore( student, category, score )
+        for category, max in classGradeBook.GetCategories():
+            score = -1
+            while score < 0 or score > max:
+                try:
+                    value = input("Please enter the score for " + student + "'s " + category + ": ")
+                    score = float(value)
+                    classGradeBook.UpdateScore( student, category, score )
+                except ValueError as exception:
+                    print(exception, "- Please enter a value between 0 and", max )
 
-    className = input("Enter a class name or DONE to stop entering classes")
+    className = input("Enter a class name or DONE to stop entering classes: ")
 
 
 choice = PrintMenu()
