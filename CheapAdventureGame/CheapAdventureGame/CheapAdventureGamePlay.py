@@ -5,8 +5,8 @@ while command != 'asdf':
     if command == 'HELP':
         for dirname, subdirs, files in os.walk('.'):
             for file in files:
-                if str(file).endswith('.game'):
-                    print(str(file).replace('.game',''))
+                if file.endswith('.game'):
+                    print(file.replace('.game',''))
         command = input("What do you want to do? ")
     else:
         command += ".game"
